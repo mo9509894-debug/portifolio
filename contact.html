@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Salah · Contact</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">WE<span>.</span>Schools</a>
+      
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <h1 class="page-title">GET IN <span>TOUCH</span></h1>
+    <p class="page-subtitle">// let's work together</p>
+  </div>
+
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h2><i class="fas fa-terminal"></i>contact</h2>
+        <p class="contact-desc">
+          I'm currently available for freelance work and full-time opportunities. 
+          If you have a project in mind or just want to say hello, feel free to reach out!
+        </p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="method-details">
+              <h3>Email</h3>
+              <p>mo9509849@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="method-details">
+              <h3>Phone</h3>
+              <p>+123456789</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="method-details">
+              <h3>Location</h3>
+              <p>New Assiut</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="method-details">
+              <h3>Response Time</h3>
+              <p>Within 24 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/mo9509894-debug" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mohamed-salah-eldeen-715831374" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/@mo9509849" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/01007108828" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+
+      <div class="contact-form">
+        <div class="form-header">
+          <h3>Send a Message</h3>
+          <p>// fill out the form below</p>
+        </div>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-user"></i> NAME
+            </label>
+            <input type="text" class="form-input" id="name" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-envelope"></i> EMAIL
+            </label>
+            <input type="email" class="form-input" id="email" required placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-tag"></i> SUBJECT
+            </label>
+            <input type="text" class="form-input" id="subject" required placeholder="Project Inquiry">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-pencil-alt"></i> MESSAGE
+            </label>
+            <textarea class="form-textarea" id="message" required placeholder="Tell me about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">
+            SEND MESSAGE <i class="fas fa-arrow-up"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="tech-strip">    
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-bootstrap"></i>
+      <i class="fab fa-python"></i>
+      <i class="fab fa-js"></i>
+      <i class="fas fa-database"></i>
+    </div>
+  </div>
+
+
+  <div class="toast" id="toast">
+    Message sent successfully! I'll respond within 24h.
+  </div>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-line"></div>
+        <p class="footer-text">
+            © 2026 <span>Mohamed Salah Eldeen</span>. All Rights Reserved.
+        </p>
+        <p class="footer-sub">
+            Grade 11 • Class 2/4
+        </p>
+    </div>
+</footer>
+
+  <script>
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+    
+    const inputs = document.querySelectorAll('.form-input, .form-textarea');
+    
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.style.transform = 'scale(1.02)';
+      });
+
+      input.addEventListener('blur', () => {
+        input.style.transform = 'scale(1)';
+      });
+    });
+
+    const contactDesc = document.querySelector('.contact-desc');
+    const originalText = contactDesc.textContent;
+    contactDesc.textContent = '';
+
+    let i = 0;
+    const typeWriter = () => {
+      if (i < originalText.length) {
+        contactDesc.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 30);
+      }
+    };
+
+
+    window.addEventListener('load', typeWriter);
+  </script>
+</body>
+</html>

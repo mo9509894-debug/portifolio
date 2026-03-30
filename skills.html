@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Salah · Skills</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">WE<span>.</span>Schools</a>
+      
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <h1 class="page-title">TECH <span>SKILLS</span></h1>
+    <p class="page-subtitle">// technologies & tools I work with</p>
+  </div>
+
+  <div class="container">
+    <div class="tech-showcase">
+      <div class="tech-card">
+        <i class="fab fa-html5"></i>
+        <span>HTML5</span>
+      </div>
+      <div class="tech-card">
+        <i class="fab fa-css3-alt"></i>
+        <span>CSS3</span>
+      </div>
+      <div class="tech-card">
+        <i class="fab fa-bootstrap"></i>
+        <span>Bootstrap</span>
+      </div>
+      <div class="tech-card">
+        <i class="fab fa-python"></i>
+        <span>Python</span>
+      </div>
+      <div class="tech-card">
+        <i class="fab fa-js"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="tech-card">
+        <i class="fas fa-database" style="color: #f5eeee;"></i>
+        <span>Database</span>
+      </div>
+    </div>
+
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Frontend</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <i class="fab fa-html5" style="color: #e34c26;"></i>
+            <div class="skill-info">
+              <div class="skill-name">
+                <span>HTML5</span>
+                <span class="skill-percent">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+            <div class="skill-info">
+              <div class="skill-name">
+                <span>CSS</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <i class="fab fa-js" style="color: #f7df1e;"></i>
+            <div class="skill-info">
+              <div class="skill-name">
+                <span>JavaScript</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="92"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-bootstrap" style="color: #7910f2;"></i>
+            <div class="skill-info">
+              <div class="skill-name">
+                <span>Bootstrap</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-line"></div>
+        <p class="footer-text">
+            © 2026 <span>Mohamed Salah Eldeen</span>. All Rights Reserved.
+        </p>
+        <p class="footer-sub">
+            Grade 11 • Class 2/4
+        </p>
+    </div>
+</footer>
+
+  <script>
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const width = entry.target.getAttribute('data-width');
+          entry.target.style.width = width + '%';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(bar => {
+      observer.observe(bar);
+    });
+  </script>
+</body>
+</html>
